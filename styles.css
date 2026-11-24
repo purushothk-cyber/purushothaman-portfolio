@@ -8,46 +8,69 @@
    01. DESIGN TOKENS & CSS VARIABLES
    -------------------------------------------------------------------------- */
 :root {
-  /* LIGHT PALETTE — WHITE & GOLD */
-  --bg-primary: #ffffff;
-  --bg-surface: #faf8f5;
-  --bg-surface-hover: #f3ede2;
-  --bg-card: #faf8f5;
-  --bg-card-hover: #f3ede2;
-  --bg-translucent: rgba(255, 255, 255, 0.95);
+  /* LIGHT PALETTE — WARM EARTH (PRIMARY THEME) */
+  --bg-primary: #F4EFE6;
+  --bg-surface: #FFFCF6;
+  --bg-surface-hover: #EAE0D2;
+  --bg-card: #FFFCF6;
+  --bg-card-hover: #EAE0D2;
+  --bg-secondary: #EAE0D2;
+  --bg-translucent: rgba(255, 252, 246, 0.95);
 
-  --text-primary: #12100d;
-  --text-muted: #615a4e;
-  --text-dim: #999080;
+  /* Typography */
+  --text-primary: #2B211B;   /* Heading text */
+  --text-body: #514438;      /* Body text / paragraphs */
+  --text-muted: #76685C;     /* Muted text */
+  --text-dim: #76685C;
 
-  --border-primary: #e6dfd1;
-  --border-subtle: rgba(184, 142, 40, 0.14);
-  --border-strong: rgba(184, 142, 40, 0.38);
+  /* Borders */
+  --border-primary: #DED2C3;
+  --border-subtle: rgba(121, 84, 58, 0.12);
+  --border-strong: rgba(121, 84, 58, 0.32);
 
-  --pill-bg: #e6ded0;
-  --pill-thumb: #b88e28;
+  /* Primary Theme Brown & Links & Buttons */
+  --color-primary: #79543A;      /* Primary brown */
+  --color-hover: #60412D;        /* Hover brown */
+  --btn-primary-bg: #79543A;
+  --btn-primary-hover: #60412D;
+  --btn-primary-text: #FFFCF6;
+  --link-color: #79543A;
+  --link-hover: #60412D;
 
-  /* Gold & Accent Tokens */
-  --accent-gold: #b88e28;
-  --accent-gold-light: #c5a059;
-  --accent-gold-bg: rgba(184, 142, 40, 0.08);
-  --accent-gold-border: rgba(184, 142, 40, 0.35);
+  /* Accent Olive */
+  --accent-olive: #66735A;
+  --accent-olive-bg: rgba(102, 115, 90, 0.10);
+  --accent-olive-border: rgba(102, 115, 90, 0.35);
 
-  --accent-red: #a21c1c;
-  --accent-red-bg: rgba(162, 28, 28, 0.06);
-  --accent-red-border: rgba(162, 28, 28, 0.35);
+  /* Selection */
+  --selection-bg: #EAE0D2;
+  --selection-text: #2B211B;
 
-  --accent-amber: #b88e28;
-  --accent-amber-bg: rgba(184, 142, 40, 0.08);
-  --accent-amber-border: rgba(184, 142, 40, 0.35);
+  /* Theme Switch Pill */
+  --pill-bg: #EAE0D2;
+  --pill-thumb: #79543A;
 
-  --accent-teal: #288ca0;
-  --accent-teal-bg: rgba(40, 140, 160, 0.06);
-  --accent-teal-border: rgba(40, 140, 160, 0.35);
+  /* Accent Compatibility Tokens */
+  --accent-gold: #79543A;
+  --accent-gold-light: #C49A72;
+  --accent-gold-bg: rgba(121, 84, 58, 0.08);
+  --accent-gold-border: rgba(121, 84, 58, 0.32);
 
-  --accent-violet: #783cb4;
-  --accent-violet-bg: rgba(120, 60, 180, 0.06);
-  --accent-violet-border: rgba(120, 60, 180, 0.35);
+  --accent-amber: #79543A;
+  --accent-amber-bg: rgba(121, 84, 58, 0.08);
+  --accent-amber-border: rgba(121, 84, 58, 0.32);
+
+  --accent-red: #8B3A2B;
+  --accent-red-bg: rgba(139, 58, 43, 0.08);
+  --accent-red-border: rgba(139, 58, 43, 0.35);
+
+  --accent-teal: #66735A; /* Accent Olive */
+  --accent-teal-bg: rgba(102, 115, 90, 0.08);
+  --accent-teal-border: rgba(102, 115, 90, 0.35);
+
+  --accent-violet: #6A4E42;
+  --accent-violet-bg: rgba(106, 78, 66, 0.08);
+  --accent-violet-border: rgba(106, 78, 66, 0.35);
 
   /* Fonts */
   --font-serif: 'Playfair Display', Georgia, serif;
@@ -59,39 +82,70 @@
   --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* DARK THEME — BLACK & GOLD */
+/* DARK THEME — DEEP ESPRESSO (COMPLEMENTARY THEME) */
 [data-theme="dark"] {
-  --bg-primary: #0a0a08;
-  --bg-surface: #141310;
-  --bg-surface-hover: #1c1a15;
-  --bg-card: #12110e;
-  --bg-card-hover: #1a1914;
-  --bg-translucent: rgba(10, 10, 8, 0.95);
+  --bg-primary: #171411;
+  --bg-surface: #211C17;
+  --bg-surface-hover: #2B241D;
+  --bg-card: #211C17;
+  --bg-card-hover: #2B241D;
+  --bg-secondary: #2B241D;
+  --bg-translucent: rgba(33, 28, 23, 0.95);
 
-  --text-primary: #fbf9f4;
-  --text-muted: #b8af9e;
-  --text-dim: #7a7263;
+  /* Typography */
+  --text-primary: #F1E8DC;   /* Heading text */
+  --text-body: #D1C3B3;      /* Body text / paragraphs */
+  --text-muted: #B6A797;     /* Muted text */
+  --text-dim: #B6A797;
 
-  --border-primary: #2d2921;
-  --border-subtle: rgba(212, 175, 55, 0.14);
-  --border-strong: rgba(212, 175, 55, 0.36);
+  /* Borders */
+  --border-primary: #3D3228;
+  --border-subtle: rgba(196, 154, 114, 0.12);
+  --border-strong: rgba(196, 154, 114, 0.32);
 
-  --pill-bg: #26231b;
-  --pill-thumb: #d4af37;
+  /* Primary Accent & Links & Buttons */
+  --color-primary: #C49A72;      /* Primary accent */
+  --color-hover: #D6B18C;        /* Hover accent */
+  --btn-primary-bg: #C49A72;
+  --btn-primary-hover: #D6B18C;
+  --btn-primary-text: #171411;
+  --link-color: #C49A72;
+  --link-hover: #D6B18C;
 
-  /* Gold & Accent Tokens in Dark Mode */
-  --accent-gold: #d4af37;
-  --accent-gold-light: #e8c85a;
-  --accent-gold-bg: rgba(212, 175, 55, 0.14);
-  --accent-gold-border: rgba(212, 175, 55, 0.45);
+  /* Accent Olive */
+  --accent-olive: #A5AD83;
+  --accent-olive-bg: rgba(165, 173, 131, 0.14);
+  --accent-olive-border: rgba(165, 173, 131, 0.40);
 
-  --accent-amber: #d4af37;
-  --accent-amber-bg: rgba(212, 175, 55, 0.14);
-  --accent-amber-border: rgba(212, 175, 55, 0.45);
+  /* Selection */
+  --selection-bg: #3D3228;
+  --selection-text: #F1E8DC;
 
-  --accent-red-bg: rgba(162, 28, 28, 0.16);
-  --accent-teal-bg: rgba(40, 140, 160, 0.16);
-  --accent-violet-bg: rgba(120, 60, 180, 0.16);
+  /* Theme Switch Pill */
+  --pill-bg: #2B241D;
+  --pill-thumb: #C49A72;
+
+  /* Accent Compatibility Tokens in Dark Mode */
+  --accent-gold: #C49A72;
+  --accent-gold-light: #D6B18C;
+  --accent-gold-bg: rgba(196, 154, 114, 0.14);
+  --accent-gold-border: rgba(196, 154, 114, 0.42);
+
+  --accent-amber: #C49A72;
+  --accent-amber-bg: rgba(196, 154, 114, 0.14);
+  --accent-amber-border: rgba(196, 154, 114, 0.42);
+
+  --accent-red: #D96B54;
+  --accent-red-bg: rgba(217, 107, 84, 0.15);
+  --accent-red-border: rgba(217, 107, 84, 0.40);
+
+  --accent-teal: #A5AD83; /* Accent Olive */
+  --accent-teal-bg: rgba(165, 173, 131, 0.15);
+  --accent-teal-border: rgba(165, 173, 131, 0.40);
+
+  --accent-violet: #C9A294;
+  --accent-violet-bg: rgba(201, 162, 148, 0.15);
+  --accent-violet-border: rgba(201, 162, 148, 0.40);
 }
 
 /* --------------------------------------------------------------------------
@@ -113,12 +167,20 @@ html {
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
-  color: var(--text-primary);
+  color: var(--text-body);
   line-height: 1.65;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+p, .hero-paragraph, .about-bio-lead, .about-bio-text, .p-desc, .contact-lead-statement, .info-panel-desc, .achieve-sub, .spec-col {
+  color: var(--text-body);
+}
+
+h1, h2, h3, h4, h5, h6, .hero-name-single, .section-main-heading, .achieve-title, .p-title, .info-panel-title, .modal-heading {
+  color: var(--text-primary);
 }
 
 @media (pointer: fine) {
@@ -131,8 +193,8 @@ body {
 }
 
 ::selection {
-  background: var(--accent-gold);
-  color: var(--bg-primary);
+  background: var(--selection-bg);
+  color: var(--selection-text);
 }
 
 ::-webkit-scrollbar {
@@ -142,13 +204,21 @@ body {
   background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--accent-gold);
+  background: var(--border-primary);
   border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
 }
 
 a {
-  color: inherit;
+  color: var(--link-color);
   text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
 }
 
 section {
@@ -166,7 +236,7 @@ section {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--accent-gold);
+  background-color: var(--color-primary);
   pointer-events: none;
   z-index: 99999;
   will-change: transform;
@@ -181,7 +251,7 @@ section {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  border: 1.5px solid var(--accent-gold);
+  border: 1.5px solid var(--color-primary);
   opacity: 0.5;
   pointer-events: none;
   z-index: 99998;
@@ -194,8 +264,8 @@ body.cursor-hover .custom-cursor-ring {
   width: 52px;
   height: 52px;
   opacity: 0.35;
-  border-color: var(--accent-gold);
-  background-color: var(--accent-gold-bg);
+  border-color: var(--color-primary);
+  background-color: var(--border-subtle);
 }
 
 @media (pointer: coarse), (max-width: 768px) {
@@ -265,7 +335,7 @@ body.cursor-hover .custom-cursor-ring {
 
 .nav-brand:hover .nav-brand-icon {
   transform: scale(1.1) rotate(-4deg);
-  box-shadow: 0 4px 14px var(--accent-gold-border);
+  box-shadow: 0 4px 14px var(--border-strong);
 }
 
 .nav-brand:hover span {
@@ -290,8 +360,8 @@ body.cursor-hover .custom-cursor-ring {
 }
 
 .nav-item:hover, .nav-item.active {
-  color: var(--accent-gold);
-  border-bottom-color: var(--accent-gold);
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
 }
 
 /* Sliding Theme Switch Pill */
@@ -478,7 +548,7 @@ body.cursor-hover .custom-cursor-ring {
 .hero-dot {
   font-style: italic;
   font-family: var(--font-serif);
-  color: var(--accent-gold);
+  color: var(--color-primary);
   font-weight: 700;
 }
 
@@ -513,7 +583,7 @@ body.cursor-hover .custom-cursor-ring {
   font-size: 17px;
   line-height: 1.7;
   max-width: 640px;
-  color: var(--text-muted);
+  color: var(--text-body);
   margin: 0 auto 32px;
 }
 
@@ -533,20 +603,20 @@ body.cursor-hover .custom-cursor-ring {
   letter-spacing: 2.5px;
   text-transform: uppercase;
   padding: 12px 28px;
-  background-color: var(--text-primary);
-  color: var(--bg-primary);
-  border: 1px solid var(--accent-gold);
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: 1px solid var(--btn-primary-bg);
   border-radius: 2px;
-  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
 .btn-action-solid:hover {
-  opacity: 0.94;
+  background-color: var(--btn-primary-hover);
+  border-color: var(--btn-primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px var(--accent-gold-bg);
 }
 
 .btn-action-outline {
@@ -556,7 +626,7 @@ body.cursor-hover .custom-cursor-ring {
   text-transform: uppercase;
   padding: 12px 28px;
   background-color: transparent;
-  color: var(--text-primary);
+  color: var(--color-primary);
   border: 1px solid var(--border-primary);
   border-radius: 2px;
   transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
@@ -566,9 +636,9 @@ body.cursor-hover .custom-cursor-ring {
 }
 
 .btn-action-outline:hover {
-  border-color: var(--accent-gold);
-  color: var(--accent-gold);
-  background-color: var(--bg-surface);
+  border-color: var(--color-hover);
+  color: var(--color-hover);
+  background-color: var(--bg-surface-hover);
   transform: translateY(-2px);
 }
 
@@ -924,8 +994,8 @@ body.cursor-hover .custom-cursor-ring {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: var(--accent-gold);
-  box-shadow: 0 0 6px var(--accent-gold);
+  background-color: var(--color-primary);
+  box-shadow: 0 0 6px var(--border-subtle);
 }
 
 .tag-title {
@@ -957,7 +1027,7 @@ body.cursor-hover .custom-cursor-ring {
 
 .wave-bar-unit {
   flex: 1;
-  background-color: var(--accent-gold);
+  background-color: var(--color-primary);
   border-radius: 1px;
   transform-origin: bottom;
   animation: waveBar 1.5s ease-in-out infinite alternate;
@@ -1072,13 +1142,13 @@ body.cursor-hover .custom-cursor-ring {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-primary);
   border-radius: 2px;
-  color: var(--text-primary);
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  color: var(--text-body);
+  transition: border-color 0.15s ease, transform 0.15s ease, color 0.15s ease;
 }
 
 .sbadge:hover {
-  border-color: var(--accent-gold);
-  color: var(--accent-gold);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
   transform: translateY(-1px);
 }
 
@@ -1137,7 +1207,7 @@ body.cursor-hover .custom-cursor-ring {
 
 .mstar {
   font-size: 9px;
-  color: var(--accent-gold);
+  color: var(--color-primary);
 }
 
 /* Verified Achievement Trio */
@@ -1157,7 +1227,7 @@ body.cursor-hover .custom-cursor-ring {
 
 .achieve-card:hover {
   transform: translateY(-2px);
-  border-color: var(--accent-gold-border);
+  border-color: var(--color-primary);
 }
 
 .achieve-kicker {
@@ -1179,7 +1249,7 @@ body.cursor-hover .custom-cursor-ring {
 .achieve-sub {
   font-family: var(--font-sans);
   font-size: 13.5px;
-  color: var(--text-muted);
+  color: var(--text-body);
   line-height: 1.6;
 }
 
@@ -1205,7 +1275,7 @@ body.cursor-hover .custom-cursor-ring {
 }
 
 .project-editorial-card:hover {
-  border-color: var(--accent-gold-border);
+  border-color: var(--color-primary);
   transform: translateY(-2px);
 }
 
@@ -1406,10 +1476,10 @@ body.cursor-hover .custom-cursor-ring {
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--accent-gold);
+  color: var(--color-primary);
   padding: 5px 12px;
   background-color: var(--bg-primary);
-  border: 1px solid var(--accent-gold-border);
+  border: 1px solid var(--border-primary);
   border-radius: 3px;
   min-width: 95px;
   text-align: center;
@@ -1419,7 +1489,7 @@ body.cursor-hover .custom-cursor-ring {
 .crow-link-text {
   font-family: var(--font-mono);
   font-size: 13px;
-  color: var(--text-primary);
+  color: var(--link-color);
   letter-spacing: 0.3px;
   white-space: nowrap;
   overflow: hidden;
@@ -1428,7 +1498,7 @@ body.cursor-hover .custom-cursor-ring {
 }
 
 .crow-link-text:hover {
-  color: var(--accent-gold);
+  color: var(--link-hover);
   text-decoration: underline;
 }
 
@@ -1454,8 +1524,9 @@ body.cursor-hover .custom-cursor-ring {
 }
 
 .crow-btn-copy:hover {
-  color: var(--accent-gold);
-  border-color: var(--accent-gold);
+  color: var(--btn-primary-text);
+  background-color: var(--btn-primary-bg);
+  border-color: var(--btn-primary-bg);
 }
 
 .crow-action-arrow {
@@ -1463,7 +1534,7 @@ body.cursor-hover .custom-cursor-ring {
   font-size: 11px;
   padding: 4px 9px;
   background-color: var(--bg-primary);
-  color: var(--text-muted);
+  color: var(--color-primary);
   border: 1px solid var(--border-primary);
   border-radius: 2px;
   display: inline-flex;
@@ -1473,9 +1544,9 @@ body.cursor-hover .custom-cursor-ring {
 }
 
 .crow-action-arrow:hover {
-  color: var(--accent-gold);
-  border-color: var(--accent-gold);
-  background-color: var(--bg-surface);
+  color: var(--color-hover);
+  border-color: var(--color-hover);
+  background-color: var(--bg-surface-hover);
 }
 
 /* Side Column */
@@ -1494,7 +1565,7 @@ body.cursor-hover .custom-cursor-ring {
 }
 
 .contact-info-panel:hover {
-  border-color: var(--text-primary);
+  border-color: var(--color-primary);
   transform: translateY(-2px);
 }
 
@@ -1514,8 +1585,8 @@ body.cursor-hover .custom-cursor-ring {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background-color: #288ca0;
-  box-shadow: 0 0 8px rgba(40, 140, 160, 0.7);
+  background-color: var(--accent-olive);
+  box-shadow: 0 0 8px var(--accent-olive);
   flex-shrink: 0;
 }
 
@@ -1613,16 +1684,17 @@ body.cursor-hover .custom-cursor-ring {
   letter-spacing: 2px;
   text-transform: uppercase;
   padding: 6px 14px;
-  background-color: var(--text-primary);
-  color: var(--bg-primary);
-  border: 1px solid var(--text-primary);
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: 1px solid var(--btn-primary-bg);
   border-radius: 2px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .game-ctrl-btn:hover {
-  opacity: 0.85;
+  background-color: var(--btn-primary-hover);
+  border-color: var(--btn-primary-hover);
 }
 
 #game-sound-btn {
@@ -1632,7 +1704,8 @@ body.cursor-hover .custom-cursor-ring {
 }
 
 #game-sound-btn:hover {
-  border-color: var(--text-primary);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .game-canvas-dock {
