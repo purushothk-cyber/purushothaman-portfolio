@@ -506,15 +506,16 @@
 
     function render() {
       const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      const bgColor = isDark ? '#141210' : '#f0ece6';
-      const primaryColor = isDark ? '#f5f2ee' : '#1a1714';
-      const mutedColor = isDark ? '#706a62' : '#b0a89e';
+      const bgColor = isDark ? '#141310' : '#faf8f5';
+      const primaryColor = isDark ? '#fbf9f4' : '#12100d';
+      const mutedColor = isDark ? '#b8af9e' : '#615a4e';
+      const goldColor = isDark ? '#d4af37' : '#b88e28';
 
       ctx.fillStyle = bgColor;
       ctx.fillRect(0, 0, W, H);
 
       // Fine background grid
-      ctx.strokeStyle = isDark ? 'rgba(245, 242, 238, 0.03)' : 'rgba(26, 23, 20, 0.04)';
+      ctx.strokeStyle = isDark ? 'rgba(212, 175, 55, 0.05)' : 'rgba(184, 142, 40, 0.06)';
       ctx.lineWidth = 1;
       for (let x = 0; x < W; x += 32) {
         ctx.beginPath();
@@ -548,12 +549,12 @@
       ctx.roundRect(paddle.x, paddle.y, paddle.w, paddle.h, 3);
       ctx.fill();
 
-      // Paddle neon core
-      ctx.fillStyle = '#288ca0';
+      // Paddle gold power core
+      ctx.fillStyle = goldColor;
       ctx.fillRect(paddle.x + paddle.w / 2 - 8, paddle.y + 3, 16, 4);
 
       // Draw ball
-      ctx.fillStyle = primaryColor;
+      ctx.fillStyle = goldColor;
       ctx.beginPath();
       ctx.arc(ball.x, ball.y, ball.r, 0, Math.PI * 2);
       ctx.fill();
@@ -573,15 +574,15 @@
     function drawGameOverScreen() {
       render();
       const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      ctx.fillStyle = isDark ? 'rgba(14, 13, 11, 0.85)' : 'rgba(245, 242, 238, 0.85)';
+      ctx.fillStyle = isDark ? 'rgba(10, 10, 8, 0.88)' : 'rgba(255, 255, 255, 0.88)';
       ctx.fillRect(0, 0, W, H);
 
-      ctx.fillStyle = isDark ? '#f5f2ee' : '#1a1714';
+      ctx.fillStyle = isDark ? '#fbf9f4' : '#12100d';
       ctx.font = '22px "Playfair Display", serif';
       ctx.textAlign = 'center';
       ctx.fillText('FIREWALL BREACH DETECTED', W / 2, H / 2 - 12);
 
-      ctx.fillStyle = isDark ? '#b0a89e' : '#6b6560';
+      ctx.fillStyle = isDark ? '#d4af37' : '#b88e28';
       ctx.font = '11px "DM Mono", monospace';
       ctx.fillText(`FINAL SCORE: ${score} · CLICK OR PRESS START TO RETRY`, W / 2, H / 2 + 18);
     }
@@ -589,15 +590,15 @@
     function drawWinScreen() {
       render();
       const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      ctx.fillStyle = isDark ? 'rgba(14, 13, 11, 0.85)' : 'rgba(245, 242, 238, 0.85)';
+      ctx.fillStyle = isDark ? 'rgba(10, 10, 8, 0.88)' : 'rgba(255, 255, 255, 0.88)';
       ctx.fillRect(0, 0, W, H);
 
-      ctx.fillStyle = '#288ca0';
+      ctx.fillStyle = isDark ? '#d4af37' : '#b88e28';
       ctx.font = '22px "Playfair Display", serif';
       ctx.textAlign = 'center';
       ctx.fillText('ALL FIREWALL LAYERS CLEARED!', W / 2, H / 2 - 12);
 
-      ctx.fillStyle = isDark ? '#f5f2ee' : '#1a1714';
+      ctx.fillStyle = isDark ? '#fbf9f4' : '#12100d';
       ctx.font = '11px "DM Mono", monospace';
       ctx.fillText(`SCORE: ${score} · EXCELLENT DEFENSE PROTOCOL`, W / 2, H / 2 + 18);
     }
@@ -633,8 +634,8 @@
       ctx.clearRect(0, 0, w, h);
 
       const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      const strokeColor = isDark ? 'rgba(245, 242, 238, 0.15)' : 'rgba(26, 23, 20, 0.15)';
-      const sweepColor = isDark ? 'rgba(245, 242, 238, 0.35)' : 'rgba(26, 23, 20, 0.35)';
+      const strokeColor = isDark ? 'rgba(212, 175, 55, 0.22)' : 'rgba(184, 142, 40, 0.22)';
+      const sweepColor = isDark ? 'rgba(212, 175, 55, 0.55)' : 'rgba(184, 142, 40, 0.55)';
 
       // Concentric circles
       ctx.strokeStyle = strokeColor;
@@ -973,7 +974,53 @@
   }
 
   /* --------------------------------------------------------------------------
-     12. INITIALIZATION LIFECYCLE
+     12. CONTACT ACTIONS & CLIPBOARD
+     -------------------------------------------------------------------------- */
+  function initContactActions() {
+    const copyEmailBtn = document.getElementById('btn-copy-email');
+    if (copyEmailBtn) {
+      copyEmailBtn.addEventListener('click', () => {
+        const email = 'purushothk1525@gmail.com';
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(email).then(() => {
+            showToast('Email copied to clipboard!');
+            copyEmailBtn.textContent = 'COPIED!';
+            setTimeout(() => {
+              copyEmailBtn.textContent = 'COPY';
+            }, 2000);
+          }).catch(() => {
+            fallbackCopy(email, copyEmailBtn);
+          });
+        } else {
+          fallbackCopy(email, copyEmailBtn);
+        }
+      });
+    }
+
+    function fallbackCopy(text, btn) {
+      try {
+        const tempInput = document.createElement('textarea');
+        tempInput.value = text;
+        tempInput.style.position = 'fixed';
+        tempInput.style.opacity = '0';
+        document.body.appendChild(tempInput);
+        tempInput.focus();
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        showToast('Email copied to clipboard!');
+        btn.textContent = 'COPIED!';
+        setTimeout(() => {
+          btn.textContent = 'COPY';
+        }, 2000);
+      } catch (e) {
+        showToast('Email: purushothk1525@gmail.com');
+      }
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     13. INITIALIZATION LIFECYCLE
      -------------------------------------------------------------------------- */
   document.addEventListener('DOMContentLoaded', () => {
     initTheme();
@@ -984,6 +1031,7 @@
     initWaveDividers();
     initNavbar();
     initProjectModals();
+    initContactActions();
   });
 
 })();

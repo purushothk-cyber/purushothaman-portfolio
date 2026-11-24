@@ -2,99 +2,73 @@
 const fs = require('fs');
 
 function buildPDF() {
-  const content = [
-    "%PDF-1.4",
-    "1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj",
-    "2 0 obj << /Type /Pages /Kids [3 0 R] /Count 1 >> endobj",
-    "3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >> endobj",
-    "4 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >> endobj",
-    "5 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj",
-  ];
-
   const streamLines = [
     "BT",
-    "/F1 20 Tf 40 800 Td (PURUSHOTHAMAN K.) Tj",
-    "/F2 10 Tf 0 -18 Td (Chennai, Tamil Nadu, India | purushothk1525@gmail.com | Graduation: 2027) Tj",
-    "0 -14 Td (LinkedIn: linkedin.com/in/purushothaman-k-analyst | GitHub: github.com/purushothk-cyber) Tj",
-    "0 -14 Td (LeetCode: leetcode.com/u/purushothamank/) Tj",
+    "/F1 18 Tf 40 810 Td (PURUSHOTHAMAN K.) Tj",
+    "/F2 9.5 Tf 0 -16 Td (Chennai, Tamil Nadu, India | purushothk1525@gmail.com | Graduation: 2027) Tj",
+    "0 -13 Td (LinkedIn: linkedin.com/in/purushothaman-k-analyst | GitHub: github.com/purushothk-cyber) Tj",
+    "0 -13 Td (LeetCode: leetcode.com/u/purushothamank/) Tj",
     
-    // Line separator
-    "0 -15 Td () Tj",
-    "/F1 12 Tf 0 -10 Td (PROFESSIONAL OBJECTIVE & POSITIONING) Tj",
-    "/F2 9.5 Tf 0 -14 Td (Computer Science Engineering student specializing in Cyber Security. Interested in cybersecurity,) Tj",
-    "0 -12 Td (cloud technologies, software development, infrastructure and solving practical technology problems.) Tj",
-    "0 -12 Td (Seeking entry-level opportunities starting in 2027.) Tj",
+    // Objective
+    "0 -14 Td () Tj",
+    "/F1 11 Tf 0 -10 Td (PROFESSIONAL POSITIONING) Tj",
+    "/F2 9 Tf 0 -13 Td (Computer Science Engineering undergraduate specializing in Cyber Security. Experienced in technical training,) Tj",
+    "0 -11 Td (event organization, platform development, and software engineering. Seeking entry-level roles starting 2027.) Tj",
     
     // Education
-    "0 -18 Td () Tj",
-    "/F1 12 Tf 0 -10 Td (EDUCATION) Tj",
-    "/F1 10 Tf 0 -15 Td (Bachelor of Engineering (B.E.) - Computer Science & Engineering (Cyber Security)) Tj",
-    "/F2 9.5 Tf 0 -13 Td (New Prince Shri Bhavani College of Engineering and Technology, Chennai | 2023 - 2027) Tj",
-    "0 -12 Td (Cumulative Grade Point Average (CGPA): 7.87 / 10 (till date)) Tj",
-    "/F2 9.5 Tf 0 -14 Td (Secondary Education: Kumararani Meena Muthiah Matriculation Higher Secondary School) Tj",
+    "0 -14 Td () Tj",
+    "/F1 11 Tf 0 -10 Td (EDUCATION) Tj",
+    "/F1 9.5 Tf 0 -13 Td (B.E. Computer Science & Engineering (Cyber Security) | CGPA: 7.87 / 10 (till date)) Tj",
+    "/F2 9 Tf 0 -12 Td (New Prince Shri Bhavani College of Engineering and Technology, Chennai | 2023 - 2027) Tj",
+    "0 -11 Td (Secondary Education: Kumararani Meena Muthiah Matriculation Higher Secondary School, Chennai) Tj",
     
+    // Leadership & Event Experience
+    "0 -14 Td () Tj",
+    "/F1 11 Tf 0 -10 Td (LEADERSHIP, EVENTS & COMMUNITY ENGAGEMENT) Tj",
+    "/F1 9.5 Tf 0 -13 Td (01. CYBERFORGE 2026 - Workshop Organizer, Technical Trainer & Platform Developer) Tj",
+    "/F2 8.5 Tf 0 -11 Td (- Organized 4-day hands-on workshop covering Linux, digital forensics, web security, cryptography, and OSINT.) Tj",
+    "0 -10 Td (- Trained & mentored participants; engineered custom CTF platform with scoring, leaderboards, and interactive labs.) Tj",
+    
+    "/F1 9.5 Tf 0 -13 Td (02. AI ESCAPE ROOM & AI ESCAPE ROOM 2.0 - Event Organizer, Coordinator & Host) Tj",
+    "/F2 8.5 Tf 0 -11 Td (- Conceptualized & hosted AI-themed interactive problem-solving competition under department Spartanz initiative.) Tj",
+    "0 -10 Td (- Coordinated challenges, logistics, and student engagement; hosted the expanded 2026 edition (AI Escape Room 2.0).) Tj",
+
+    "/F1 9.5 Tf 0 -13 Td (03. Cybersecurity Awareness Session & CTF - Technical Trainer & Event Coordinator) Tj",
+    "/F2 8.5 Tf 0 -11 Td (- Delivered 2-hour cybersecurity awareness training session for approximately 160 students.) Tj",
+    "0 -10 Td (- Organized a 10-challenge CTF competition across 5 categories with a core team of three.) Tj",
+
+    "/F1 9.5 Tf 0 -13 Td (04. INNO-HACK 2025 - Hackathon Coordinator) Tj",
+    "/F2 8.5 Tf 0 -11 Td (- Coordinated a 36-hour college hackathon with a prize pool exceeding Rs. 30,000; supported 2-stage evaluation.) Tj",
+
+    "/F1 9.5 Tf 0 -13 Td (05. AI-Powered LinkedIn & Career Development Seminar - Session Host) Tj",
+    "/F2 8.5 Tf 0 -11 Td (- Hosted seminar; coordinated between speaker, placement department, and participants to keep session on schedule.) Tj",
+
     // Technical Projects
-    "0 -18 Td () Tj",
-    "/F1 12 Tf 0 -10 Td (PROJECT ARCHIVE) Tj",
-    "/F1 10 Tf 0 -14 Td (01. FLAMES Web Application - Full-Stack Interactive Utility) Tj",
-    "/F2 9.5 Tf 0 -12 Td (- Built a responsive full-stack web application implementing FLAMES game logic algorithm.) Tj",
-    "0 -12 Td (- Engineered modular character cancellation and circular traversal calculation engine.) Tj",
-    "0 -12 Td (- Rigorously tested, debugged across viewports, and version-controlled with Git.) Tj",
-    "0 -12 Td (  Tech Stack: React, Node.js, JavaScript, HTML5, CSS3, Git) Tj",
+    "0 -14 Td () Tj",
+    "/F1 11 Tf 0 -10 Td (PROJECT ARCHIVE) Tj",
+    "/F1 9.5 Tf 0 -13 Td (01. DistillCASB - Cloud Access Security Broker [Pre-Final Year Project]) Tj",
+    "/F2 8.5 Tf 0 -11 Td (- Reverse-proxy broker architecture intercepting API traffic, sanitizing PII payloads, and enforcing zero-trust.) Tj",
+
+    "/F1 9.5 Tf 0 -13 Td (02. FLAMES Web Application - Full-Stack Interactive Utility) Tj",
+    "/F2 8.5 Tf 0 -11 Td (- Full-stack application with modular character cancellation and circular traversal algorithm in React and Node.js.) Tj",
     
-    "/F1 10 Tf 0 -16 Td (02. Bank Management System - Java OOP Console Application) Tj",
-    "/F2 9.5 Tf 0 -12 Td (- Developed a robust terminal application handling customer banking transactions.) Tj",
-    "0 -12 Td (- Implemented deposit, withdrawal, balance inquiry, and strict state encapsulation with OOP.) Tj",
-    "0 -12 Td (  Tech Stack: Java, Object-Oriented Programming (OOP), Data Structures) Tj",
-    
-    "/F1 10 Tf 0 -16 Td (03. DistillCASB - Cloud Access Security Broker [Pre-Final Year Project]) Tj",
-    "/F2 9.5 Tf 0 -12 Td (- Pre-final year research project focusing on cloud access security and data tokenization.) Tj",
-    "0 -12 Td (- Designed reverse proxy architecture to inspect, sanitize, and broker cloud SaaS payloads.) Tj",
-    "0 -12 Td (  Classification: Pre-Final Year Project (Active Research & Development)) Tj",
+    "/F1 9.5 Tf 0 -13 Td (03. Bank Management System - Java OOP Console Application) Tj",
+    "/F2 8.5 Tf 0 -11 Td (- Terminal banking operations handling deposits, withdrawals, and balance verification with strict encapsulation.) Tj",
     
     // Skills
-    "0 -18 Td () Tj",
-    "/F1 12 Tf 0 -10 Td (TECHNICAL INVENTORY) Tj",
-    "/F2 9.5 Tf 0 -14 Td (Programming Languages: Java, JavaScript) Tj",
-    "0 -12 Td (Web Technologies: React, Node.js, HTML5, CSS3) Tj",
-    "0 -12 Td (Paradigms & Core: Object-Oriented Programming (OOP), Data Structures & Algorithms) Tj",
-    "0 -12 Td (Areas of Focus: Cybersecurity, Cloud Technologies, Infrastructure, Software Engineering) Tj",
-    
-    // Achievements
-    "0 -18 Td () Tj",
-    "/F1 12 Tf 0 -10 Td (COMPETITIVE ACHIEVEMENTS & INTERESTS) Tj",
-    "/F2 9.5 Tf 0 -14 Td (- Problem Solving: 99+ LeetCode problems solved using Java (leetcode.com/u/purushothamank/)) Tj",
-    "0 -12 Td (- Cybersecurity CTF: Participated in Flag Rush CTF at SYMBO 2025 with Team ROOT FORCE) Tj",
-    "0 -12 Td (  (Handled challenges across Cryptography, Packet Analysis, and Logic challenges)) Tj",
-    "0 -12 Td (- Multidisciplinary interest in practical problem solving, technical curiosity, and communication.) Tj",
+    "0 -14 Td () Tj",
+    "/F1 11 Tf 0 -10 Td (SKILLS INVENTORY) Tj",
+    "/F2 8.5 Tf 0 -12 Td (Programming: Java, Python, JavaScript, React, Node.js, HTML5, CSS3, OOP) Tj",
+    "0 -10 Td (Cybersecurity: Security Fundamentals, Cloud Security, Networking, Cryptography, Packet Analysis, OSINT, Database) Tj",
+    "0 -10 Td (Tools & Methods: Git, GitHub, VS Code, Eclipse, MySQL, Linux, Debugging, Algorithmic Problem Solving) Tj",
+    "0 -10 Td (Professional: Public Speaking, Client Communication, Query Resolution, Event Coordination, Team Leadership) Tj",
     "ET"
   ];
 
   const streamContent = streamLines.join("\n");
   const streamLength = Buffer.byteLength(streamContent, "utf8");
 
-  content.push(`6 0 obj << /Length ${streamLength} >> stream\n${streamContent}\nendstream\nendobj`);
-
-  // xref table
-  let xref = "xref\n0 7\n0000000000 65535 f \n";
-  // We can calculate offsets or write standard structure
-  let body = "";
-  const offsets = [];
-  
-  // Calculate exact byte offsets
-  let offset = 0;
-  const chunks = [];
-  
-  function addChunk(c) {
-    offsets.push(offset);
-    chunks.push(c);
-    offset += Buffer.byteLength(c + "\n", "utf8");
-  }
-
-  // PDF header
   const header = "%PDF-1.4\n";
-  let curOffset = Buffer.byteLength(header, "utf8");
-  
   const objOffsets = [];
   const objs = [
     "1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj",
@@ -106,7 +80,7 @@ function buildPDF() {
   ];
 
   let fullBody = header;
-  objs.forEach((obj, idx) => {
+  objs.forEach((obj) => {
     objOffsets.push(fullBody.length);
     fullBody += obj + "\n";
   });
