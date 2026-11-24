@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 470" width="100%" height="100%">
+  <defs>
+    <pattern id="grid-casb" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#193D2B" stroke-width="0.5" stroke-opacity="0.5"/>
+    </pattern>
+    <marker id="casb-arrow-g" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#A5F36B"/>
+    </marker>
+    <marker id="casb-arrow-a" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#D49A54"/>
+    </marker>
+    <marker id="casb-arrow-r" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#75463F"/>
+    </marker>
+  </defs>
+
+  <rect width="840" height="470" fill="#101310"/>
+  <rect width="840" height="470" fill="url(#grid-casb)"/>
+
+  <!-- Border & Technical Header -->
+  <rect x="15" y="15" width="810" height="440" fill="none" stroke="#193D2B" stroke-width="1.5"/>
+  <rect x="15" y="15" width="810" height="30" fill="#193D2B" fill-opacity="0.35"/>
+  <text x="25" y="35" font-family="'IBM Plex Mono', monospace" font-size="11.5" fill="#A5F36B" font-weight="600" letter-spacing="1">ARCHIVE SPEC // PROJECT 003: DistillCASB [PRE-FINAL YEAR INITIATIVE]</text>
+  <text x="690" y="35" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#D49A54">SEC-LEVEL: UNCLASSIFIED</text>
+
+  <!-- Zone A: Client / Enterprise User Surface -->
+  <g transform="translate(35, 75)">
+    <rect width="180" height="150" fill="#121813" stroke="#A5F36B" stroke-width="1.2"/>
+    <rect x="0" y="0" width="180" height="24" fill="#193D2B" fill-opacity="0.8"/>
+    <text x="10" y="16" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#A5F36B" font-weight="600">ENTERPRISE ENDPOINT</text>
+    <text x="10" y="44" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#E8E3D5">> Managed Endpoints</text>
+    <text x="10" y="62" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#E8E3D5">> Remote Workforce</text>
+    <text x="10" y="80" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#E8E3D5">> API Service Callers</text>
+    <text x="10" y="105" font-family="'IBM Plex Mono', monospace" font-size="8.5" fill="#D49A54">Inbound Traffic Vector</text>
+    <text x="10" y="125" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#6c8071">TLS 1.3 / HTTP Tunnel</text>
+  </g>
+
+  <!-- Flow 1 -> 2 -->
+  <path d="M 215 145 L 275 145" fill="none" stroke="#A5F36B" stroke-width="1.5" marker-end="url(#casb-arrow-g)"/>
+  <text x="222" y="138" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#A5F36B">TRAFFIC</text>
+
+  <!-- Zone B: DistillCASB Interception & Filtering Core -->
+  <g transform="translate(285, 60)">
+    <rect width="280" height="225" fill="#151d16" stroke="#D49A54" stroke-width="1.5"/>
+    <rect x="0" y="0" width="280" height="26" fill="#75463F" fill-opacity="0.4"/>
+    <text x="10" y="18" font-family="'IBM Plex Mono', monospace" font-size="10.5" fill="#D49A54" font-weight="700">DistillCASB PROXY / ENGINE</text>
+
+    <!-- Submodule 1 -->
+    <rect x="15" y="38" width="250" height="45" fill="#101310" stroke="#193D2B"/>
+    <text x="25" y="54" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#A5F36B">[1] REVERSE PROXY &amp; INSPECTOR</text>
+    <text x="25" y="70" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#E8E3D5">Deep Packet / Payload Analysis &amp; Metadata Parse</text>
+
+    <!-- Submodule 2 -->
+    <rect x="15" y="92" width="250" height="50" fill="#101310" stroke="#193D2B"/>
+    <text x="25" y="108" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#D49A54">[2] DISTILLATION &amp; TOKENIZATION</text>
+    <text x="25" y="123" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#E8E3D5">Sensitive Data Scrubbing &amp; Anonymization</text>
+    <text x="25" y="135" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#E8E3D5">Prevent PII / Credential Exfiltration</text>
+
+    <!-- Submodule 3 -->
+    <rect x="15" y="152" width="250" height="45" fill="#101310" stroke="#193D2B"/>
+    <text x="25" y="168" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#A5F36B">[3] ZERO-TRUST POLICY EVALUATOR</text>
+    <text x="25" y="184" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#E8E3D5">Access Matrix: ALLOW / SANITIZE / REJECT</text>
+
+    <text x="15" y="213" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#6c8071">MODULE: MODULAR SECURITY GATEWAY</text>
+  </g>
+
+  <!-- Flow 2 -> 3 -->
+  <path d="M 565 145 L 625 145" fill="none" stroke="#A5F36B" stroke-width="1.5" marker-end="url(#casb-arrow-g)"/>
+  <text x="572" y="138" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#A5F36B">VERIFIED</text>
+
+  <!-- Zone C: Cloud Applications & Targets -->
+  <g transform="translate(635, 75)">
+    <rect width="170" height="150" fill="#121813" stroke="#A5F36B" stroke-width="1.2"/>
+    <rect x="0" y="0" width="170" height="24" fill="#193D2B" fill-opacity="0.8"/>
+    <text x="10" y="16" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#A5F36B" font-weight="600">CLOUD APPS (SaaS)</text>
+    <text x="10" y="44" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#E8E3D5">> AWS / Cloud Infra</text>
+    <text x="10" y="62" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#E8E3D5">> SaaS Collaborative</text>
+    <text x="10" y="80" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#E8E3D5">> Enterprise Databases</text>
+    <text x="10" y="105" font-family="'IBM Plex Mono', monospace" font-size="8.5" fill="#A5F36B">Sanitized Ingestion</text>
+    <text x="10" y="125" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#6c8071">Secure API Hooks</text>
+  </g>
+
+  <!-- Lower Section: Security Telemetry & Audit Logs -->
+  <g transform="translate(35, 310)">
+    <rect width="770" height="120" fill="#0d140e" stroke="#193D2B" stroke-width="1"/>
+    <text x="20" y="24" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#A5F36B" font-weight="600">> TELEMETRY MONITOR &amp; COMPLIANCE AUDITING STREAM</text>
+    <line x1="20" y1="34" x2="750" y2="34" stroke="#193D2B" stroke-width="1"/>
+
+    <g transform="translate(20, 46)">
+      <rect width="230" height="60" fill="#101310" stroke="#193D2B"/>
+      <text x="10" y="18" font-family="'IBM Plex Mono', monospace" font-size="8.5" fill="#D49A54">AUDIT LOG: #8092-A</text>
+      <text x="10" y="34" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#E8E3D5">Unsanitized token detected</text>
+      <text x="10" y="48" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#75463F">ACTION: DISTILLED &amp; REPORTED</text>
+    </g>
+
+    <g transform="translate(270, 46)">
+      <rect width="230" height="60" fill="#101310" stroke="#193D2B"/>
+      <text x="10" y="18" font-family="'IBM Plex Mono', monospace" font-size="8.5" fill="#D49A54">POLICY ENGINE: REV 1.4</text>
+      <text x="10" y="34" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#E8E3D5">Anomaly detection routine</text>
+      <text x="10" y="48" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#A5F36B">STATUS: ACTIVE IN-PROGRESS</text>
+    </g>
+
+    <g transform="translate(520, 46)">
+      <rect width="230" height="60" fill="#101310" stroke="#193D2B"/>
+      <text x="10" y="18" font-family="'IBM Plex Mono', monospace" font-size="8.5" fill="#D49A54">SECURITY ARCHITECTURE</text>
+      <text x="10" y="34" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#E8E3D5">Zero-Trust perimeter gate</text>
+      <text x="10" y="48" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#E8E3D5">Pre-Final Year Research Scope</text>
+    </g>
+  </g>
+</svg>

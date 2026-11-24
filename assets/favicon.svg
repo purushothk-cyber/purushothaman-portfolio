@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1916"/>
+      <stop offset="100%" stop-color="#0e0d0b"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5f2ee"/>
+      <stop offset="100%" stop-color="#d4a359"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4a359"/>
+      <stop offset="100%" stop-color="#b48228"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Squircle Base with Refined Double Border -->
+  <rect x="4" y="4" width="120" height="120" rx="28" fill="url(#bgGrad)" stroke="#d4a359" stroke-width="2.5" stroke-opacity="0.85"/>
+  <rect x="8" y="8" width="112" height="112" rx="24" fill="none" stroke="rgba(245,242,238,0.12)" stroke-width="1"/>
+
+  <!-- Subtle Cyber Security Crosshair / Shield Grid lines -->
+  <line x1="64" y1="12" x2="64" y2="20" stroke="#d4a359" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="64" y1="108" x2="64" y2="116" stroke="#d4a359" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="12" y1="64" x2="20" y2="64" stroke="#d4a359" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="108" y1="64" x2="116" y2="64" stroke="#d4a359" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Monogram Mark: Interlocking P & K with Cyber Architecture -->
+  <g id="monogram-pk">
+    <!-- P Stem (Vertical Pillar) -->
+    <path d="M 36 32 L 36 96" stroke="url(#goldGrad)" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- P Loop / Security Shield Node -->
+    <path d="M 36 34 L 56 34 C 70 34, 76 43, 76 54 C 76 65, 70 74, 56 74 L 36 74" 
+          fill="none" stroke="url(#goldGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- K Upper Diagonal (Ascending Vector) -->
+    <path d="M 58 56 L 90 32" stroke="url(#accentGrad)" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- K Lower Diagonal (Descending Stance) -->
+    <path d="M 66 66 L 92 96" stroke="url(#accentGrad)" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Cryptographic Node Anchor (Core Security Point) -->
+    <circle cx="58" cy="56" r="4.5" fill="#f5f2ee"/>
+    <circle cx="58" cy="56" r="7.5" fill="none" stroke="#d4a359" stroke-width="1.5" opacity="0.8"/>
+  </g>
+</svg>

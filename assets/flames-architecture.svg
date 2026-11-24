@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <pattern id="grid-flames" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#193D2B" stroke-width="0.5" stroke-opacity="0.5"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#A5F36B"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#D49A54"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="#101310"/>
+  <rect width="800" height="450" fill="url(#grid-flames)"/>
+
+  <!-- Border & Technical Header -->
+  <rect x="15" y="15" width="770" height="420" fill="none" stroke="#193D2B" stroke-width="1.5"/>
+  <rect x="15" y="15" width="770" height="28" fill="#193D2B" fill-opacity="0.35"/>
+  <text x="25" y="34" font-family="'IBM Plex Mono', monospace" font-size="11" fill="#A5F36B" font-weight="600" letter-spacing="1">FIG 01.1 // SYSTEM ARCHITECTURE: FLAMES ALGORITHMIC ENGINE</text>
+  <text x="730" y="34" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#D49A54">REV: 2.1</text>
+
+  <!-- Node 1: Client UI -->
+  <g transform="translate(40, 90)">
+    <rect width="180" height="110" rx="3" fill="#141c14" stroke="#A5F36B" stroke-width="1.2"/>
+    <rect x="0" y="0" width="180" height="24" fill="#193D2B" fill-opacity="0.7"/>
+    <text x="10" y="16" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#A5F36B" font-weight="600">CLIENT LAYER [REACT]</text>
+    <text x="10" y="45" font-family="'IBM Plex Mono', monospace" font-size="9.5" fill="#E8E3D5">> Name Input Validation</text>
+    <text x="10" y="65" font-family="'IBM Plex Mono', monospace" font-size="9.5" fill="#E8E3D5">> Responsive GUI State</text>
+    <text x="10" y="85" font-family="'IBM Plex Mono', monospace" font-size="9.5" fill="#D49A54">> Event Handlers (DOM)</text>
+    <text x="10" y="102" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#6c8071">STATION: DESKTOP / MOBILE</text>
+  </g>
+
+  <!-- Connect 1 -> 2 -->
+  <path d="M 220 145 L 290 145" fill="none" stroke="#A5F36B" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="228" y="137" font-family="'IBM Plex Mono', monospace" font-size="8.5" fill="#A5F36B">JSON/POST</text>
+
+  <!-- Node 2: Logic Pipeline -->
+  <g transform="translate(300, 75)">
+    <rect width="210" height="145" rx="3" fill="#141c14" stroke="#D49A54" stroke-width="1.2"/>
+    <rect x="0" y="0" width="210" height="24" fill="#75463F" fill-opacity="0.3"/>
+    <text x="10" y="16" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#D49A54" font-weight="600">ALGORITHM CORE [NODE/JS]</text>
+    <text x="10" y="45" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#E8E3D5">1. Sanitize &amp; normalize chars</text>
+    <text x="10" y="65" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#E8E3D5">2. Common char cancellation</text>
+    <text x="10" y="85" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#E8E3D5">3. Modular circular traversal</text>
+    <text x="10" y="105" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#A5F36B">> Index = (N - 1) % Length</text>
+    <text x="10" y="132" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#D49A54">STATE: DETERMINISTIC CALC</text>
+  </g>
+
+  <!-- Connect 2 -> 3 -->
+  <path d="M 510 145 L 575 145" fill="none" stroke="#D49A54" stroke-width="1.5" marker-end="url(#arrow-amber)"/>
+  <text x="520" y="137" font-family="'IBM Plex Mono', monospace" font-size="8.5" fill="#D49A54">RESULT</text>
+
+  <!-- Node 3: Result Rendering Matrix -->
+  <g transform="translate(585, 90)">
+    <rect width="175" height="110" rx="3" fill="#141c14" stroke="#A5F36B" stroke-width="1.2"/>
+    <rect x="0" y="0" width="175" height="24" fill="#193D2B" fill-opacity="0.7"/>
+    <text x="10" y="16" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#A5F36B" font-weight="600">OUTPUT MATRIX</text>
+    <text x="10" y="45" font-family="'IBM Plex Mono', monospace" font-size="9.5" fill="#E8E3D5">[F] Friends</text>
+    <text x="10" y="62" font-family="'IBM Plex Mono', monospace" font-size="9.5" fill="#E8E3D5">[L] Love  [A] Affection</text>
+    <text x="10" y="79" font-family="'IBM Plex Mono', monospace" font-size="9.5" fill="#E8E3D5">[M] Marriage [E] Enmity</text>
+    <text x="10" y="96" font-family="'IBM Plex Mono', monospace" font-size="9.5" fill="#A5F36B">[S] Siblings (Resolved)</text>
+  </g>
+
+  <!-- Lower Section: Verification & Git Pipeline -->
+  <g transform="translate(40, 255)">
+    <rect width="720" height="150" fill="#0d140e" stroke="#193D2B" stroke-width="1"/>
+    <text x="20" y="25" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#A5F36B" font-weight="600">> PIPELINE VERIFICATION &amp; VERSION CONTROL REGISTER</text>
+    
+    <line x1="20" y1="35" x2="700" y2="35" stroke="#193D2B" stroke-width="1"/>
+
+    <!-- Step 1 -->
+    <g transform="translate(20, 50)">
+      <rect width="150" height="75" fill="#101310" stroke="#193D2B"/>
+      <text x="10" y="20" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#D49A54">[01. REPOSITORY]</text>
+      <text x="10" y="40" font-family="'IBM Plex Mono', monospace" font-size="8.5" fill="#E8E3D5">Git Source Control</text>
+      <text x="10" y="58" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#6c8071">Branching / Commits</text>
+    </g>
+
+    <!-- Step 2 -->
+    <g transform="translate(195, 50)">
+      <rect width="150" height="75" fill="#101310" stroke="#193D2B"/>
+      <text x="10" y="20" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#D49A54">[02. DEBUGGING]</text>
+      <text x="10" y="40" font-family="'IBM Plex Mono', monospace" font-size="8.5" fill="#E8E3D5">Edge Case Validation</text>
+      <text x="10" y="58" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#6c8071">Whitespace &amp; Nulls</text>
+    </g>
+
+    <!-- Step 3 -->
+    <g transform="translate(370, 50)">
+      <rect width="150" height="75" fill="#101310" stroke="#193D2B"/>
+      <text x="10" y="20" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#D49A54">[03. CROSS-DEVICE]</text>
+      <text x="10" y="40" font-family="'IBM Plex Mono', monospace" font-size="8.5" fill="#E8E3D5">Responsive Viewport</text>
+      <text x="10" y="58" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#6c8071">Mobile + Desktop CSS</text>
+    </g>
+
+    <!-- Step 4 -->
+    <g transform="translate(545, 50)">
+      <rect width="155" height="75" fill="#101310" stroke="#A5F36B" stroke-dasharray="2 2"/>
+      <text x="10" y="20" font-family="'IBM Plex Mono', monospace" font-size="9" fill="#A5F36B">[04. PRODUCTION]</text>
+      <text x="10" y="40" font-family="'IBM Plex Mono', monospace" font-size="8.5" fill="#A5F36B">Live Deployment Ready</text>
+      <text x="10" y="58" font-family="'IBM Plex Mono', monospace" font-size="8" fill="#E8E3D5">Full-Stack Interlink</text>
+    </g>
+  </g>
+</svg>

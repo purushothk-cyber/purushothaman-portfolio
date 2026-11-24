@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>Purushothaman K. · Cybersecurity &amp; Systems Portfolio</title>
+  <meta name="description" content="Personal portfolio of Purushothaman K. — Computer Science Engineering (Cyber Security), Class of 2027, Chennai. Cybersecurity research, DistillCASB, full-stack software development, and algorithmic problem solving.">
+  <meta name="author" content="Purushothaman K.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Google Fonts: Playfair Display, DM Sans, DM Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Custom Dual Trailing Cursor -->
+  <div id="cursor-dot" class="custom-cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" class="custom-cursor-ring" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="site-nav" id="site-nav">
+    <!-- Brand Logo -->
+    <a href="#home" class="nav-brand" data-hover="true">
+      <img src="assets/favicon.svg" alt="PK Monogram" class="nav-brand-icon" width="24" height="24">
+      <div class="brand-letters">
+        <span>P</span><span>U</span><span>R</span><span>U</span><span>S</span><span>H</span>
+      </div>
+    </a>
+
+    <!-- Nav Links & Theme Toggle Pill -->
+    <div class="nav-links-cluster">
+      <a href="#home" class="nav-item active" data-hover="true">home</a>
+      <a href="#about" class="nav-item" data-hover="true">about</a>
+      <a href="#work" class="nav-item" data-hover="true">work</a>
+      <a href="#contact" class="nav-item" data-hover="true">contact</a>
+
+      <!-- Theme Switch Pill -->
+      <div id="theme-pill-toggle" class="theme-switch-pill" role="button" aria-label="Toggle light and dark color theme" title="Toggle Light/Dark Theme" data-hover="true">
+        <div class="pill-thumb" id="theme-pill-thumb"></div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-wrapper">
+
+    <!-- ==========================================
+         HERO SECTION
+         ========================================== -->
+    <section id="home" class="hero-screen">
+      <!-- Floating Ambient Geometric Elements -->
+      <div class="float-particle p-dot-1" aria-hidden="true"></div>
+      <div class="float-particle p-dot-2" aria-hidden="true"></div>
+      <div class="float-particle p-circle-1" aria-hidden="true"></div>
+      <div class="float-particle p-circle-2" aria-hidden="true"></div>
+      <div class="float-particle p-cross" aria-hidden="true">
+        <div class="cross-h"></div>
+        <div class="cross-v"></div>
+      </div>
+      <div class="float-particle p-line" aria-hidden="true"></div>
+      <div class="float-particle p-triangle" aria-hidden="true"></div>
+
+      <!-- Kicker -->
+      <div class="hero-kicker-bar">
+        <div class="kicker-hairline"></div>
+        <span class="kicker-label">Portfolio — 2027</span>
+        <div class="kicker-hairline"></div>
+      </div>
+
+      <!-- Main Headline: Purushothaman K. on a single line -->
+      <h1 class="hero-name-single">Purushothaman K<span class="hero-dot">.</span></h1>
+
+      <!-- Subtitle Tagline -->
+      <div class="hero-sub-row">
+        <div class="sub-hairline"></div>
+        <span class="sub-text">B.E. Computer Science · Cyber Security · Chennai</span>
+        <div class="sub-hairline"></div>
+      </div>
+
+      <!-- Summary Bio -->
+      <p class="hero-paragraph">
+        Cybersecurity undergraduate in Chennai — building interfaces, breaking systems, designing with purpose, and solving practical technology problems.
+      </p>
+
+      <!-- Primary Action Buttons -->
+      <div class="hero-btn-row">
+        <a href="#work" class="btn-action-solid" data-hover="true">View Work</a>
+        <a href="assets/Purushothaman_K_Resume.pdf" download="Purushothaman_K_Resume.pdf" class="btn-action-outline" data-hover="true">Resume ↓</a>
+        <a href="#contact" class="btn-action-outline" data-hover="true">Contact</a>
+      </div>
+
+      <!-- 3-Column Interactive Hero Core -->
+      <div class="hero-interactive-dock">
+        <!-- Left Column: Disciplines & Cyber Matrix -->
+        <div class="dock-col-left">
+          <div class="dock-section-title">Disciplines</div>
+          <div class="dock-item">Cybersecurity</div>
+          <div class="dock-item">Cloud &amp; CASB</div>
+          <div class="dock-item">Software Dev</div>
+          <div class="dock-item">CTF &amp; LeetCode</div>
+
+          <!-- Interactive CTF Defense Matrix -->
+          <div class="cipher-matrix-box">
+            <div class="cipher-matrix-header">
+              <span class="cipher-label">◈ CYBER MATRIX // CTF</span>
+              <div class="cipher-keys-hint" id="cipher-streak-hint">
+                <span>VERIFIED: <strong id="cipher-streak-count">0</strong></span>
+              </div>
+            </div>
+
+            <div class="cipher-nodes-cluster">
+              <div class="cipher-node node-auth" data-action="auth" data-key="1" data-hover="true">
+                <span class="node-icon">◈</span>
+                <span class="node-name">AUTH</span>
+                <span class="node-key">1</span>
+              </div>
+              <div class="cipher-node node-crypt" data-action="crypt" data-key="2" data-hover="true">
+                <span class="node-icon">⚲</span>
+                <span class="node-name">CRYPT</span>
+                <span class="node-key">2</span>
+              </div>
+              <div class="cipher-node node-casb" data-action="casb" data-key="3" data-hover="true">
+                <span class="node-icon">◇</span>
+                <span class="node-name">CASB</span>
+                <span class="node-key">3</span>
+              </div>
+              <div class="cipher-node node-zero" data-action="zero" data-key="4" data-hover="true">
+                <span class="node-icon">◎</span>
+                <span class="node-name">ZERO-T</span>
+                <span class="node-key">4</span>
+              </div>
+            </div>
+
+            <div class="cipher-footer-terminal">
+              <span class="term-prompt">❯</span>
+              <span class="term-text" id="cipher-log-text">SYSTEM DEFENSES ARMED · PRESS 1-4</span>
+            </div>
+          </div>
+
+          <!-- Animated Telemetry Stream -->
+          <div class="waveform-container wave-left" id="wave-left" aria-hidden="true"></div>
+        </div>
+
+        <!-- Center Column: Spinning Text Orbit & Quote -->
+        <div class="dock-col-center">
+          <div class="orbit-wheel-wrapper">
+            <div class="orbit-svg-spin" aria-hidden="true">
+              <svg width="300" height="300" viewBox="0 0 300 300">
+                <defs>
+                  <path id="orbitPath" d="M 150,150 m -139,0 a 139,139 0 1,1 278,0 a 139,139 0 1,1 -278,0"/>
+                </defs>
+                <text font-size="7" font-family="'DM Mono', monospace" letter-spacing="2">
+                  <textPath href="#orbitPath">
+                    CYBERSECURITY · DESIGN · SYSTEMS · CTF · ZERO-TRUST · JAVA · REACT · CASB · LEETCODE  ·  CYBERSECURITY · DESIGN · SYSTEMS · CTF · ZERO-TRUST · JAVA · REACT · CASB · LEETCODE  ·  
+                  </textPath>
+                </text>
+              </svg>
+            </div>
+            
+            <div class="orbit-center-canvas-wrap">
+              <canvas id="radar-canvas" width="375" height="375"></canvas>
+            </div>
+          </div>
+
+          <div class="orbit-quote">"where code meets creativity"</div>
+        </div>
+
+        <!-- Right Column: Tech Stack & Waveform -->
+        <div class="dock-col-right">
+          <div class="dock-section-title">Stack</div>
+          <div class="stack-grid-list">
+            <div class="stack-row"><span class="sitem">Java</span><span class="sitem">JavaScript</span></div>
+            <div class="stack-row"><span class="sitem">React</span><span class="sitem">Node.js</span></div>
+            <div class="stack-row"><span class="sitem">HTML5</span><span class="sitem">CSS3</span></div>
+            <div class="stack-row"><span class="sitem">Git</span><span class="sitem">GitHub</span></div>
+            <div class="stack-row"><span class="sitem">CASB</span><span class="sitem">CTF / OSINT</span></div>
+            <div class="stack-row"><span class="sitem">VS Code</span><span class="sitem">Linux</span></div>
+          </div>
+
+          <!-- Animated Audio Waveform -->
+          <div class="waveform-container wave-right" id="wave-right" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <!-- Stat Counters Row -->
+      <div class="hero-stats-trio">
+        <div class="stat-trio-item">
+          <div class="trio-num">99<span class="trio-plus">+</span></div>
+          <div class="trio-label">LeetCode Solved</div>
+        </div>
+        <div class="stat-trio-item">
+          <div class="trio-num">03</div>
+          <div class="trio-label">Projects</div>
+        </div>
+        <div class="stat-trio-item">
+          <div class="trio-num">7.87</div>
+          <div class="trio-label">CGPA (Current)</div>
+        </div>
+        <div class="stat-trio-item">
+          <div class="trio-num">2027</div>
+          <div class="trio-label">Graduation</div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#about" class="scroll-bounce-cue" aria-label="Scroll down">
+        <span class="cue-label">scroll</span>
+        <div class="cue-indicator-line"></div>
+      </a>
+    </section>
+
+    <!-- ==========================================
+         SECTION 01: ABOUT
+         ========================================== -->
+    <section id="about" class="page-section">
+      <!-- Ambient particles -->
+      <div class="float-particle p-about-1" aria-hidden="true"></div>
+      <div class="float-particle p-about-2" aria-hidden="true"></div>
+      <div class="float-particle p-about-3" aria-hidden="true"></div>
+
+      <div class="section-tag-row">
+        <span class="tag-bullet"></span>
+        <span class="tag-title">About</span>
+      </div>
+
+      <h2 class="section-main-heading">Background &amp; Philosophy</h2>
+
+      <!-- Animated Audio Waveform Divider -->
+      <div class="section-wave-divider" id="wave-about" aria-hidden="true"></div>
+
+      <div class="about-twocol-grid">
+        <!-- Left: Narrative & Education -->
+        <div class="about-narrative-col">
+          <p class="about-lead-para">
+            I'm a Cybersecurity Engineering undergraduate at New Prince Shri Bhavani College of Engineering and Technology, Chennai, graduating in 2027. I sit at the intersection of security, systems, and software engineering.
+          </p>
+          <p class="about-sub-para">
+            "Hi, I'm Purushothaman, a final-year Computer Science (Cyber Security) student from Chennai. I like understanding how technology works and using it to solve real problems for people." Outside the classroom, I compete in CTF security tournaments, solve algorithmic problems on LeetCode in Java, and design practical technology solutions.
+          </p>
+
+          <div class="hairline-divider"></div>
+
+          <!-- Education -->
+          <div class="section-tag-row">
+            <span class="tag-bullet"></span>
+            <span class="tag-title">Education</span>
+          </div>
+
+          <div class="edu-cards-list">
+            <div class="edu-item-card" data-hover="true">
+              <h3 class="edu-card-degree">B.E. Computer Science &amp; Engineering</h3>
+              <div class="edu-card-sub">Cybersecurity Specialisation · CGPA 7.87 / 10 (till date)</div>
+              <div class="edu-card-inst">New Prince Shri Bhavani College of Engineering &amp; Technology · 2023 – 2027</div>
+            </div>
+
+            <div class="edu-item-card" data-hover="true">
+              <h3 class="edu-card-degree">Secondary Education Reference</h3>
+              <div class="edu-card-sub">Kumararani Meena Muthiah Matriculation Higher Secondary School</div>
+              <div class="edu-card-inst">Chennai, Tamil Nadu, India</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Technical Skills & Strengths -->
+        <div class="about-skills-col">
+          <div class="section-tag-row">
+            <span class="tag-bullet"></span>
+            <span class="tag-title">Skills</span>
+          </div>
+
+          <div class="skills-block-stack">
+            <!-- Group 1 -->
+            <div class="skill-category-block">
+              <div class="skill-group-name">Languages &amp; Web</div>
+              <div class="skill-badges-cluster">
+                <span class="sbadge" data-hover="true">Java</span>
+                <span class="sbadge" data-hover="true">JavaScript</span>
+                <span class="sbadge" data-hover="true">React</span>
+                <span class="sbadge" data-hover="true">Node.js</span>
+                <span class="sbadge" data-hover="true">HTML5</span>
+                <span class="sbadge" data-hover="true">CSS3</span>
+                <span class="sbadge" data-hover="true">OOP</span>
+              </div>
+              <div class="mini-hairline"></div>
+            </div>
+
+            <!-- Group 2 -->
+            <div class="skill-category-block">
+              <div class="skill-group-name">Cybersecurity &amp; Cloud</div>
+              <div class="skill-badges-cluster">
+                <span class="sbadge" data-hover="true">Security Fundamentals</span>
+                <span class="sbadge" data-hover="true">CASB Architecture</span>
+                <span class="sbadge" data-hover="true">Reverse Proxying</span>
+                <span class="sbadge" data-hover="true">Packet Analysis</span>
+                <span class="sbadge" data-hover="true">Zero-Trust Rules</span>
+                <span class="sbadge" data-hover="true">Cryptography</span>
+              </div>
+              <div class="mini-hairline"></div>
+            </div>
+
+            <!-- Group 3 -->
+            <div class="skill-category-block">
+              <div class="skill-group-name">Developer Tools</div>
+              <div class="skill-badges-cluster">
+                <span class="sbadge" data-hover="true">Git</span>
+                <span class="sbadge" data-hover="true">GitHub</span>
+                <span class="sbadge" data-hover="true">VS Code</span>
+                <span class="sbadge" data-hover="true">JVM Tooling</span>
+                <span class="sbadge" data-hover="true">Chrome DevTools</span>
+              </div>
+              <div class="mini-hairline"></div>
+            </div>
+
+            <!-- Group 4 -->
+            <div class="skill-category-block">
+              <div class="skill-group-name">Competitions &amp; Problem Solving</div>
+              <div class="skill-badges-cluster">
+                <span class="sbadge" data-hover="true">LeetCode (99+ Solved)</span>
+                <span class="sbadge" data-hover="true">Flag Rush CTF</span>
+                <span class="sbadge" data-hover="true">Team ROOT FORCE</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hairline-divider"></div>
+
+          <!-- Core Strengths -->
+          <div class="section-tag-row">
+            <span class="tag-bullet"></span>
+            <span class="tag-title">Core Strengths</span>
+          </div>
+
+          <div class="strengths-badges-row">
+            <span class="strength-chip" data-hover="true">Analytical Mindset</span>
+            <span class="strength-chip" data-hover="true">Fast Learner</span>
+            <span class="strength-chip" data-hover="true">Collaboration</span>
+            <span class="strength-chip" data-hover="true">Problem Solving</span>
+            <span class="strength-chip" data-hover="true">Clear Communicator</span>
+            <span class="strength-chip" data-hover="true">Curiosity</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Infinite Marquee Running Strip -->
+      <div class="marquee-strip-wrapper">
+        <div class="marquee-scroller" aria-hidden="true">
+          <span class="mitem">Cybersecurity<span class="mstar">✦</span></span>
+          <span class="mitem">Cloud Security<span class="mstar">✦</span></span>
+          <span class="mitem">CASB Architecture<span class="mstar">✦</span></span>
+          <span class="mitem">Java OOP<span class="mstar">✦</span></span>
+          <span class="mitem">React &amp; Node.js<span class="mstar">✦</span></span>
+          <span class="mitem">LeetCode 99+<span class="mstar">✦</span></span>
+          <span class="mitem">CTF Competitions<span class="mstar">✦</span></span>
+          <span class="mitem">Team ROOT FORCE<span class="mstar">✦</span></span>
+          <span class="mitem">Chennai Station<span class="mstar">✦</span></span>
+          <span class="mitem">Class of 2027<span class="mstar">✦</span></span>
+          <!-- Duplicate for seamless loop -->
+          <span class="mitem">Cybersecurity<span class="mstar">✦</span></span>
+          <span class="mitem">Cloud Security<span class="mstar">✦</span></span>
+          <span class="mitem">CASB Architecture<span class="mstar">✦</span></span>
+          <span class="mitem">Java OOP<span class="mstar">✦</span></span>
+          <span class="mitem">React &amp; Node.js<span class="mstar">✦</span></span>
+          <span class="mitem">LeetCode 99+<span class="mstar">✦</span></span>
+          <span class="mitem">CTF Competitions<span class="mstar">✦</span></span>
+          <span class="mitem">Team ROOT FORCE<span class="mstar">✦</span></span>
+          <span class="mitem">Chennai Station<span class="mstar">✦</span></span>
+          <span class="mitem">Class of 2027<span class="mstar">✦</span></span>
+        </div>
+      </div>
+
+      <!-- Verified Achievements Cards -->
+      <div class="achievements-trio-row">
+        <div class="achieve-card" data-hover="true">
+          <div class="achieve-kicker">SYMBO 2025</div>
+          <h3 class="achieve-title">Flag Rush CTF</h3>
+          <p class="achieve-sub">Team ROOT FORCE · Cryptography &amp; Packet Analysis</p>
+        </div>
+        <div class="achieve-card" data-hover="true">
+          <div class="achieve-kicker">ALGORITHMS</div>
+          <h3 class="achieve-title">99+ LeetCode</h3>
+          <p class="achieve-sub">Java Data Structures &amp; Dynamic Problem Solving</p>
+        </div>
+        <div class="achieve-card" data-hover="true">
+          <div class="achieve-kicker">COMMUNICATION</div>
+          <h3 class="achieve-title">Tech &amp; People</h3>
+          <p class="achieve-sub">Practical problem solving &amp; clear documentation</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 02: SELECTED PROJECTS (WORK)
+         ========================================== -->
+    <section id="work" class="page-section">
+      <div class="section-tag-row">
+        <span class="tag-bullet"></span>
+        <span class="tag-title">Work</span>
+      </div>
+
+      <h2 class="section-main-heading">Selected Projects</h2>
+
+      <!-- Animated Audio Waveform Divider -->
+      <div class="section-wave-divider" id="wave-work" aria-hidden="true"></div>
+
+      <!-- Project Rows List -->
+      <div class="projects-dossier-list">
+
+        <!-- PROJECT 003: DistillCASB (Pre-Final Year Project Priority) -->
+        <article class="project-editorial-card" id="proj-01" data-hover="true">
+          <span class="p-num">01</span>
+          
+          <div class="p-center">
+            <div class="p-title-row">
+              <h3 class="p-title">DistillCASB</h3>
+              <span class="p-pre-final-tag">PRE-FINAL YEAR PROJECT</span>
+            </div>
+            
+            <p class="p-desc">
+              Cloud Access Security Broker (CASB) architecture for transparent SaaS proxying, data distillation, sensitive token scrubbing, and zero-trust policy enforcement across distributed enterprise endpoints.
+            </p>
+
+            <div class="p-specs-grid">
+              <div class="spec-col"><strong>Problem:</strong> Data exfiltration and credential exposure across third-party cloud SaaS without central visibility.</div>
+              <div class="spec-col"><strong>Solution:</strong> Reverse-proxy broker intercepting API traffic, sanitizing PII payloads, and evaluating zero-trust rules.</div>
+              <div class="spec-col"><strong>Contribution:</strong> Architecture design, threat modeling, tokenization workflow, and pre-final year research spec.</div>
+            </div>
+
+            <div class="p-chips-row">
+              <span class="pchip">Cloud Security</span>
+              <span class="pchip">CASB Architecture</span>
+              <span class="pchip">Reverse Proxy</span>
+              <span class="pchip">Data Tokenization</span>
+              <span class="pchip">Zero-Trust</span>
+            </div>
+          </div>
+
+          <div class="p-right-col">
+            <span class="p-cat-label">Security</span>
+            <div class="p-actions-cluster">
+              <a href="https://github.com/purushothk-cyber" target="_blank" rel="noopener noreferrer" class="link-action-btn" data-hover="true">GitHub ↗</a>
+              <button class="link-action-btn view-schematic-trigger" data-img="assets/distill-casb-architecture.svg" data-title="DistillCASB // Architectural Schematic" data-hover="true">Schematic ◉</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 001: FLAMES Web Application -->
+        <article class="project-editorial-card" id="proj-02" data-hover="true">
+          <span class="p-num">02</span>
+          
+          <div class="p-center">
+            <div class="p-title-row">
+              <h3 class="p-title">FLAMES Web Application</h3>
+            </div>
+            
+            <p class="p-desc">
+              Interactive full-stack web application engineering the classic relationship algorithm through modular character cancellation, circular index traversal, and responsive cross-platform layout.
+            </p>
+
+            <div class="p-specs-grid">
+              <div class="spec-col"><strong>Problem:</strong> Fragile input normalization, unhandled whitespace, and unresponsive UI scaling across mobile viewports.</div>
+              <div class="spec-col"><strong>Solution:</strong> React frontend with Node.js calculation engine, deterministic circular indexing `(N-1) % length`.</div>
+              <div class="spec-col"><strong>Contribution:</strong> Full-stack component architecture, algorithm verification, and Git version control.</div>
+            </div>
+
+            <div class="p-chips-row">
+              <span class="pchip">React</span>
+              <span class="pchip">Node.js</span>
+              <span class="pchip">JavaScript</span>
+              <span class="pchip">HTML5</span>
+              <span class="pchip">CSS3</span>
+              <span class="pchip">Git</span>
+            </div>
+          </div>
+
+          <div class="p-right-col">
+            <span class="p-cat-label">Web Dev</span>
+            <div class="p-actions-cluster">
+              <a href="https://github.com/purushothk-cyber" target="_blank" rel="noopener noreferrer" class="link-action-btn" data-hover="true">GitHub ↗</a>
+              <button class="link-action-btn run-flames-modal-btn" data-hover="true">Live Demo ▶</button>
+              <button class="link-action-btn view-schematic-trigger" data-img="assets/flames-architecture.svg" data-title="FLAMES // System Flow &amp; Git Pipeline" data-hover="true">Schematic ◉</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 002: Bank Management System -->
+        <article class="project-editorial-card" id="proj-03" data-hover="true">
+          <span class="p-num">03</span>
+          
+          <div class="p-center">
+            <div class="p-title-row">
+              <h3 class="p-title">Bank Management System</h3>
+            </div>
+            
+            <p class="p-desc">
+              Java console application engineered to execute core customer banking operations using strict object-oriented programming principles and state encapsulation.
+            </p>
+
+            <div class="p-specs-grid">
+              <div class="spec-col"><strong>Problem:</strong> Managing state and balance integrity without race conditions or illegal negative deposits.</div>
+              <div class="spec-col"><strong>Solution:</strong> Encapsulated Account entities, guarded mutators, overdraft checks, and CLI event loops.</div>
+              <div class="spec-col"><strong>Contribution:</strong> Class hierarchy design, transaction methods (deposit, withdrawal, balance inquiry), and JVM test cases.</div>
+            </div>
+
+            <div class="p-chips-row">
+              <span class="pchip">Java</span>
+              <span class="pchip">OOP Architecture</span>
+              <span class="pchip">Encapsulation</span>
+              <span class="pchip">CLI Design</span>
+            </div>
+          </div>
+
+          <div class="p-right-col">
+            <span class="p-cat-label">Systems</span>
+            <div class="p-actions-cluster">
+              <a href="https://github.com/purushothk-cyber" target="_blank" rel="noopener noreferrer" class="link-action-btn" data-hover="true">GitHub ↗</a>
+              <button class="link-action-btn run-bank-modal-btn" data-hover="true">Emulator ▶</button>
+              <button class="link-action-btn view-schematic-trigger" data-img="assets/bank-system-uml.svg" data-title="Bank System // UML Class Hierarchy &amp; Logic" data-hover="true">UML ◉</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 03: CONTACT (LET'S TALK)
+         ========================================== -->
+    <section id="contact" class="page-section contact-screen">
+      <div class="section-tag-row">
+        <span class="tag-bullet"></span>
+        <span class="tag-title">Contact</span>
+      </div>
+
+      <h2 class="section-main-heading">Let's Talk</h2>
+
+      <!-- Animated Audio Waveform Divider -->
+      <div class="section-wave-divider" id="wave-contact" aria-hidden="true"></div>
+
+      <p class="contact-lead-statement">
+        Open to entry-level engineering opportunities starting in 2027, collaborative research, and interesting problems. Reach out anytime.
+      </p>
+
+      <div class="contact-table-wrapper">
+        <!-- Email -->
+        <a href="mailto:purushothk1525@gmail.com" class="contact-editorial-row" data-hover="true">
+          <span class="crow-label">Email</span>
+          <span class="crow-val">purushothk1525@gmail.com</span>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/purushothaman-k-analyst" target="_blank" rel="noopener noreferrer" class="contact-editorial-row" data-hover="true">
+          <span class="crow-label">LinkedIn</span>
+          <span class="crow-val">linkedin.com/in/purushothaman-k-analyst</span>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/purushothk-cyber" target="_blank" rel="noopener noreferrer" class="contact-editorial-row" data-hover="true">
+          <span class="crow-label">GitHub</span>
+          <span class="crow-val">github.com/purushothk-cyber</span>
+        </a>
+
+        <!-- LeetCode -->
+        <a href="https://leetcode.com/u/purushothamank/" target="_blank" rel="noopener noreferrer" class="contact-editorial-row" data-hover="true">
+          <span class="crow-label">LeetCode</span>
+          <span class="crow-val">leetcode.com/u/purushothamank/</span>
+        </a>
+
+        <!-- Location Card -->
+        <div class="location-summary-card" data-hover="true">
+          <div class="loc-kicker">Location</div>
+          <div class="loc-title">Chennai, India</div>
+          <div class="loc-desc">Available for 2027 entry-level roles &amp; technical opportunities</div>
+        </div>
+
+        <!-- Resume Download Card -->
+        <div class="resume-cta-block" data-hover="true">
+          <div>
+            <div class="loc-kicker">Curriculum Vitae</div>
+            <div class="loc-title" style="font-size: 16px;">Download Verified Resume</div>
+            <div class="loc-desc">Complete academic standing, CTF verification, and project portfolio.</div>
+          </div>
+          <a href="assets/Purushothaman_K_Resume.pdf" download="Purushothaman_K_Resume.pdf" class="btn-action-solid" data-hover="true">
+            Download PDF ↓
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER: INTERACTIVE MINI-GAME
+       FIREWALL DEFENDER // 2027 ARCADE
+       ========================================== -->
+  <footer class="site-footer">
+    <div class="footer-game-wrapper">
+      <div class="game-top-bar">
+        <div>
+          <div class="game-kicker">⚲ interactive mini-game · packet breaker arcade</div>
+          <div class="game-title">Firewall Defender</div>
+        </div>
+        <div class="game-hud-cluster">
+          <div class="hud-item"><span class="hud-label">SCORE</span><span class="hud-value" id="game-score">0000</span></div>
+          <div class="hud-item"><span class="hud-label">HIGH</span><span class="hud-value" id="game-high">0000</span></div>
+          <div class="hud-item"><span class="hud-label">SHIELDS</span><span class="hud-value" id="game-lives">3</span></div>
+          <button id="game-start-btn" class="game-ctrl-btn" data-hover="true">START</button>
+          <button id="game-sound-btn" class="game-ctrl-btn" data-hover="true">FX: ON</button>
+        </div>
+      </div>
+
+      <!-- Responsive Arcade Canvas -->
+      <div class="game-canvas-dock">
+        <canvas id="firewall-game-canvas" width="640" height="300"></canvas>
+      </div>
+
+      <div class="game-footer-row">
+        <div class="game-hint-text">Mouse / touch drag or [A] [D] / Arrow keys to move paddle · Break all firewall blocks</div>
+        <div class="footer-meta-cluster">
+          <span>© 2026 Purushothaman K.</span>
+          <span class="brand-sub-tag">CYBER ARCHIVE</span>
+          <span>Open to 2027 Roles</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       MODALS: LIVE DEMOS & SCHEMATICS
+       ========================================== -->
+  <div id="dialog-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-top">
+        <span id="dialog-title" class="modal-heading">Modal Title</span>
+        <button id="dialog-close" class="modal-close" type="button" aria-label="Close dialog" data-hover="true">✕</button>
+      </div>
+      <div id="dialog-content" class="modal-body">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast-popup" role="status" aria-live="polite">
+    <span id="toast-msg">Copied to clipboard!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
